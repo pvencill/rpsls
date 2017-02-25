@@ -1,4 +1,4 @@
-const app = require('./');
+const app = require('./lib/api');
 const config = require('./config');
 const log = require('./log');
 

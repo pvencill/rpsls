@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server",
-    "build": "webpack --config ./config/webpack.js",
+    "start:dev": "npm run build && npm start",
+    "start:debug": "node --inspect --debug-brk server.js",
+    "build": "cd client && npm run build && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,36 +16,27 @@
   "devDependencies": {
     "eslint": "^3.12.2",
     "eslint-config-airbnb-base": "^11.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "html-webpack-plugin": "^2.28.0",
-    "raw-loader": "^0.5.1",
-    "ts-loader": "^2.0.0",
-    "tslint": "^4.4.2",
-    "tslint-loader": "^3.3.0",
-    "typescript": "^2.1.5",
-    "typings": "^2.1.0",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^1.16.3"
+    "eslint-plugin-import": "^2.2.0"
   },
   "dependencies": {
-    "@angular/common": "^2.4.5",
-    "@angular/compiler": "^2.4.5",
-    "@angular/core": "^2.4.5",
-    "@angular/platform-browser": "^2.4.5",
-    "@angular/platform-browser-dynamic": "^2.4.5",
+    "async": "^2.1.5",
     "body-parser": "^1.16.0",
+    "core-js": "^2.4.1",
     "debug": "^2.6.0",
     "es6-shim": "^0.35.3",
     "express": "^4.14.1",
-    "jquery": "^3.1.1",
+    "helmet": "^3.4.0",
+    "jsonwebtoken": "^7.2.1",
     "moment": "^2.17.1",
     "mongoose": "^4.8.1",
+    "mongoose-validators": "^0.1.0",
     "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1",
+    "passport-ldapauth": "^1.0.0",
+    "praeter": "0.0.2",
     "reflect-metadata": "^0.1.9",
     "request": "^2.79.0",
-    "rxjs": "^5.1.0",
-    "socket.io": "^1.7.2",
-    "socket.io-client": "^1.7.2",
-    "zone.js": "^0.7.6"
+    "socket.io": "^1.7.2"
   }
 }

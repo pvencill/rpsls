@@ -1,0 +1,15 @@
+<template>
+  <div class="container container-fluid">
+    <h3 class="row">Your Teams</h3>
+    <div if.bind='loading' class="row">
+      <i class="fa fa-2x fa-spinner fa-spin"></i>      
+    </div>
+    <ul if.bind='teams.length' class="row">
+      <li repeat.for='team of teams'>
+        <a route-href="route: teamDetail; params.bind: {id: team._id}">${team.name}</a>
+      </li>
+    </ul>
+    <p if.bind='!teams.length && !loading'>You are not on a team yet.</p>
+    <a route-href="route: createTeam" title="Create a team" class='btn btn-primary'>Start a Team</a>
+  </div>
+</template>

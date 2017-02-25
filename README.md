@@ -15,3 +15,6 @@ Spock vaporizes Rock
 Rock crushes Scissors
 
 ## Tournament rules
+
+
+https://github.com/aurelia/skeleton-navigation/tree/master/skeleton-esnext-webpack

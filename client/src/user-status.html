@@ -1,0 +1,4 @@
+<template>
+  <span id='current-user' if.bind='authenticationService.currentUser'><img alt='${authenticationService.currentUser.displayName}' src='${authenticationService.currentUser.photo}' title='${authenticationService.currentUser.displayName}' class='avatar' /></span>
+  <span class='navbar-text' if.bind='!authenticationService.currentUser'><a href='#/login'>Login</a></span>
+</template>

@@ -1,0 +1,9 @@
+<template>
+  <div class="container">
+    <h3 class="row">Registered Bots</h3>
+    <ul if.bind='bots.length' class="row">
+      <li repeat.for='bot of bots'>${bot.name}</li>
+    </ul>
+    <p class="row" if.bind='!bots.length'>No bots have been registered.</p>
+  </div>
+</template>

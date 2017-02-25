@@ -1,0 +1,20 @@
+<template>
+  <div class="container container-fluid">
+      <h3 class='row'>${team.name}</h3>
+      <dl class="row" if.bind='team.bots.length'>
+        <template repeat.for='bot of team.bots'>
+          <dt>${bot.name}</dt>
+          <dd>${bot.url}</dd>
+        </template>
+      </dl>
+      <div class="row" if.bind="!team.bots.length">
+        No bots registered yet!
+      </div>
+      <a if.bind='!showForm' click.delegate='showForm=true' class="btn btn-primary row">Add a Bot</a>
+      <form if.bind="showForm">
+        <input type="text" value.bind='newBot.name' placeholder="name">
+        <input type="url" value.bind='newBot.url' placeholder="url">
+        <button click.delegate='createBot()' class="btn btn-primary">Save</button>
+      </form>
+  </div>
+</template>
