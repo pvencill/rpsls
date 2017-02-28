@@ -19,6 +19,7 @@ export class App {
       { route: 'teams/:id', name: 'teamDetail', moduleId: './components/teams/detail', nav: false, title: 'Create a Team', settings: {auth: true } },
       { route: 'bots', name: 'bots', moduleId: './components/bots/list', nav: true, title: 'Bots', settings: { auth: true } },
       { route: 'login', name: 'login', moduleId: './login', nav: false, title: 'Login' },
+      { route: 'rules', name: 'rules', moduleId: './components/rules/welcome', nav: true, title: 'Rules' },
     ]);
 
     this.router = router;

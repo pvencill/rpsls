@@ -1,0 +1,11 @@
+webpackHotUpdate(0,{
+
+/***/ "components/rules/welcome.html":
+/***/ (function(module, exports) {
+
+module.exports = "<template>\n  <section class=\"au-animate container\">\n    <h2>${heading}</h2>\n    <div class='row'>Rock-Paper-Scissors-Lizard-Spock is a modification of the ages old game of <a href='https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors' rel='external' title=\"Wiki Article about rock paper scissors\">rochambeau</a>.  It adds two additional moves to the regular rock-paper-scissors, and each hand can defeat and is defeated by two other hands.</div>\n    <ul class='list-group' repeat.for='rule of rules'>\n      <li class='list-group-item'>${rule}</li>\n    </ul>\n  </section>\n</template>\n";
+
+/***/ })
+
+})
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMC4yYTU3ZDc0MDI5MDA2ZWMyYTU0Zi5ob3QtdXBkYXRlLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vc3JjL2NvbXBvbmVudHMvcnVsZXMvd2VsY29tZS5odG1sPzFiZWYiXSwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSBcIjx0ZW1wbGF0ZT5cXG4gIDxzZWN0aW9uIGNsYXNzPVxcXCJhdS1hbmltYXRlIGNvbnRhaW5lclxcXCI+XFxuICAgIDxoMj4ke2hlYWRpbmd9PC9oMj5cXG4gICAgPGRpdiBjbGFzcz0ncm93Jz5Sb2NrLVBhcGVyLVNjaXNzb3JzLUxpemFyZC1TcG9jayBpcyBhIG1vZGlmaWNhdGlvbiBvZiB0aGUgYWdlcyBvbGQgZ2FtZSBvZiA8YSBocmVmPSdodHRwczovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9Sb2NrJUUyJTgwJTkzcGFwZXIlRTIlODAlOTNzY2lzc29ycycgcmVsPSdleHRlcm5hbCcgdGl0bGU9XFxcIldpa2kgQXJ0aWNsZSBhYm91dCByb2NrIHBhcGVyIHNjaXNzb3JzXFxcIj5yb2NoYW1iZWF1PC9hPi4gIEl0IGFkZHMgdHdvIGFkZGl0aW9uYWwgbW92ZXMgdG8gdGhlIHJlZ3VsYXIgcm9jay1wYXBlci1zY2lzc29ycywgYW5kIGVhY2ggaGFuZCBjYW4gZGVmZWF0IGFuZCBpcyBkZWZlYXRlZCBieSB0d28gb3RoZXIgaGFuZHMuPC9kaXY+XFxuICAgIDx1bCBjbGFzcz0nbGlzdC1ncm91cCcgcmVwZWF0LmZvcj0ncnVsZSBvZiBydWxlcyc+XFxuICAgICAgPGxpIGNsYXNzPSdsaXN0LWdyb3VwLWl0ZW0nPiR7cnVsZX08L2xpPlxcbiAgICA8L3VsPlxcbiAgPC9zZWN0aW9uPlxcbjwvdGVtcGxhdGU+XFxuXCI7XG5cblxuLy8vLy8vLy8vLy8vLy8vLy8vXG4vLyBXRUJQQUNLIEZPT1RFUlxuLy8gLi9zcmMvY29tcG9uZW50cy9ydWxlcy93ZWxjb21lLmh0bWxcbi8vIG1vZHVsZSBpZCA9IGNvbXBvbmVudHMvcnVsZXMvd2VsY29tZS5odG1sXG4vLyBtb2R1bGUgY2h1bmtzID0gMCJdLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBQTs7OzsiLCJzb3VyY2VSb290IjoiIn0=

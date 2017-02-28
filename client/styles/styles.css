@@ -1,3 +1,5 @@
+/* @import "bootswatch.less" */
+
 body {
   margin: 0;
 }
@@ -186,4 +188,32 @@ img.avatar {
 
 dd {
   margin-bottom: 1rem;
+}
+
+.navbar .alert {
+  margin-bottom: 0;
+}
+
+a[rel='external']:after {
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  content: "\e164";
+  padding-left: .5em;
+  font-size:x-small;
+  color: darkblue;
+}
+
+.point-next:after {
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  padding-left: .5em;
+  font-size:x-small;
+  color: darkblue;
+  content:"\e092"
+}
+
+a:link {
+  cursor: pointer;
 }

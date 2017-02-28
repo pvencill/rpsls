@@ -2,6 +2,8 @@ import { HttpClient } from 'aurelia-http-client';
 import { inject } from 'aurelia-framework';
 import { Router } from 'aurelia-router';
 import Storage from './storage';
+import { EventAggregator } from 'aurelia-event-aggregator'
+import { LoggedIn, LoggedOut } from '../events/authentication';
 
 function extractUser(token) {
   const rawData = token.split('.')[1];
@@ -11,9 +13,9 @@ function extractUser(token) {
   return user;
 }
 
-@inject(HttpClient, Router)
+@inject(HttpClient, Router, EventAggregator)
 export default class AuthenticationService {
-  constructor(httpClient, router) {
+  constructor(httpClient, router, events) {
     httpClient.configure(x => {
       x.withHeader('Content-Type', 'application/json');
       x.withHeader('Accepts', 'application/json');
@@ -23,6 +25,7 @@ export default class AuthenticationService {
     this.router = router;
     this.storage = new Storage('localStorage');
     this.currentUser = this.storage.get('user');
+    this.events = events;
   }
 
   login(username, password) {
@@ -30,7 +33,8 @@ export default class AuthenticationService {
       this.currentUser = extractUser(message.response);
       const expiresInMinutes = (this.currentUser.exp - this.currentUser.iat) / 60;
       this.storage.set('user', this.currentUser, expiresInMinutes);
+      this.events.publish(new LoggedIn(this.currentUser));
       this.router.navigate('');
-    }).catch(message => console.log(message));
+    }).catch(message => this.events.publish(new AuthenticationError(username, message)));
   }
 }

@@ -1,8 +1,8 @@
 <template>
   <require from="./nav-bar"></require>
-  
-  <nav-bar router.bind="router" auth.bind='auth'></nav-bar>
+  <require from="./flash-notice"></require>
 
+  <nav-bar router.bind="router" auth.bind='auth'></nav-bar>
   <div class="page-host">
     <router-view></router-view>
   </div>
