@@ -1,0 +1,12 @@
+stages:
+  deploy
+
+deploy-prod:
+  stage: deploy
+  variables:
+    BRANCH_REF: master
+  script:
+    - git fetch
+    - git checkout $BRANCH_REF
+    - git pull origin $BRANCH_REF
+    - npm install
