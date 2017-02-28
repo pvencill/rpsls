@@ -10,6 +10,9 @@ deploy-prod:
     - git checkout $BRANCH_REF
     - git pull origin $BRANCH_REF
     - npm install
+    - npm run build
+    - rm -rf /opt/rpsls/www
+    - ln -s $CI_PROJECT_DIR /opt/rpsls/www
   tags:
     - sheldon
     - production
