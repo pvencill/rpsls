@@ -10,3 +10,4 @@ deploy-prod:
     - git checkout $BRANCH_REF
     - git pull origin $BRANCH_REF
     - npm install
+    
