@@ -217,3 +217,33 @@ a[rel='external']:after {
 a:link {
   cursor: pointer;
 }
+
+.lizard {
+  background: url('./img/Lizard.png') no-repeat top left;
+  min-height: 125px;
+  min-width: 100px;
+}
+
+.rock {
+  background: url('./img/Rock.png') no-repeat top left;
+  min-height: 125px;  
+  min-width: 100px;
+}
+
+.paper {
+  background: url('./img/Paper.png') no-repeat top left;
+  min-height: 125px;
+  min-width: 100px;
+}
+
+.scissors {
+  background: url('./img/Scissors.png') no-repeat top left;
+  min-height: 125px;
+  min-width: 100px;
+}
+
+.spock {
+  background: url('./img/Spock.png') no-repeat top left;
+  min-height: 125px;
+  min-width: 100px;
+}

@@ -12,7 +12,7 @@ deploy-prod:
     - npm install
     - rm -rf /opt/rpsls/www
     - ln -s $CI_PROJECT_DIR /opt/rpsls/www
-    - systemctl restart rpsls
+    - sh /home/rpsls/restart.sh
   tags:
     - sheldon
     - production
