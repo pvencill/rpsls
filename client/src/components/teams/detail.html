@@ -1,4 +1,5 @@
 <template>
+  <require from='../bots/bot-form'></require>
   <div class="container container-fluid">
       <h3 class='row'>${team.name}</h3>
       <dl class="row" if.bind='team.bots.length'>
@@ -10,11 +11,7 @@
       <div class="row" if.bind="!team.bots.length">
         No bots registered yet!
       </div>
-      <a if.bind='!showForm' click.delegate='showForm=true' class="btn btn-primary row">Add a Bot</a>
-      <form if.bind="showForm">
-        <input type="text" value.bind='newBot.name' placeholder="name">
-        <input type="url" value.bind='newBot.url' placeholder="url">
-        <button click.delegate='createBot()' class="btn btn-primary">Save</button>
-      </form>
+      <a if.bind='!createBot' click.delegate='createBot=true' class="btn btn-primary row">Add a Bot</a>
+      <bot-form show-form.bind='createBot' bot.two-way='newBot' team-id.bind='teamId'></bot-form>
   </div>
 </template>

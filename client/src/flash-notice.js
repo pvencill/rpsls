@@ -1,6 +1,7 @@
 import { EventAggregator } from 'aurelia-event-aggregator';
 import { inject } from 'aurelia-framework';
 import { LoggedIn, LoggedOut, AuthenticationError } from './events/authentication';
+import { Message } from './events/notification';
 
 @inject(EventAggregator)
 export class FlashNotice {
@@ -17,6 +18,11 @@ export class FlashNotice {
 
     events.subscribe(AuthenticationError, msg => {
       this.flash('danger', 'Login Failed', msg.response.content);
+    });
+
+    events.subscribe(Message, msg => {
+      const severity = msg.constructor.name.toLowerCase();
+      this.flash(severity, msg.message, msg.detail, msg.duration);
     });
   }
 
