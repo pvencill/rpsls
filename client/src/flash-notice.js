@@ -17,7 +17,7 @@ export class FlashNotice {
     });
 
     events.subscribe(AuthenticationError, msg => {
-      this.flash('danger', 'Login Failed', msg.response.content);
+      this.flash('danger', 'Login Failed', `Could not login: ${msg.username}`);
     });
 
     events.subscribe(Message, msg => {

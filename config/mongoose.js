@@ -1,0 +1,7 @@
+const mongoose = require('mongoose');
+const config = require('./');
+
+mongoose.Promise = global.Promise;
+mongoose.connect(config.db);
+
+module.exports = mongoose;

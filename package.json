@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server",
+    "start": "DEBUG=rpsls-server:* node server",
     "start:dev": "npm run build && npm start",
     "start:debug": "node --inspect --debug-brk server.js",
     "build": "cd client && npm run build && cd ..",

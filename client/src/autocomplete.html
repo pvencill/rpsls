@@ -1,0 +1,14 @@
+<template>
+  <div class="autocomplete-container">
+    <input class="autocomplete-input form-control" autocomplete="off" value.bind="value" keyup.delegate="keyUp()" placeholder.bind="placeholder">
+    <div class="autocomplete-suggestion" if.bind='suggestions.length'>
+      <ol class="list-group">
+        <li data-index="${$index}" class="clickable list-group-item ${$index == _selected ? 'active' : ''}"
+        repeat.for="item of suggestions" mousedown.delegate="select($index)">
+          <span if.bind="!suggestionTemplate">${item}</span>
+          <compose if.bind="suggestionTemplate" view.bind="suggestionTemplate" view-model.bind="item"></compose>
+        </li>
+      </ol>
+    </div>
+  </div>
+</template>  

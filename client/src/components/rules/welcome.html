@@ -20,13 +20,13 @@
     <div class="row">
       <p>Bots are managed by teams, so to get started <a href="" route-href="route: teams">create or join a team</a>.  Once on a team, you can see a list of bots owned by the team and create a new one.</p>
       <h6>What's a bot?</h6>
-      <p>An RPSLS Bot is a RESTful service, hosted by the team owning it somewhere.  It must expose at least one URL that will accept a POST request with a JSON body about a match and respond in a timely fashion with the next move it wants to make.  To configure a Bot, you need at least a name and a URL to it, and optionally a secret key, a description and a URL to an image that will be used as an icon.</p>
+      <p>An RPSLS Bot is a RESTful service, hosted by the team owning it somewhere. It must expose at least one URL that will accept a POST request with a JSON body about a match and respond in a timely fashion with a string of the next move it wants to make (e.g. "rock", "spock", etc).  To configure a Bot, you need at least a name and a URL to it, and optionally a secret key, a description and a URL to an image that will be used as an icon.</p>
       <p>If a secret key is provided, the Match will be sent to the Bot as a <a href="https://jwt.io/introduction/" rel="external" title="JSON Web Token RFC website">JWT</a> encrypted with the secret key.</p>
       <h6>What's a Match?</h6>
       <p>When two players (bot and human) engage in a Match, each will get information about what moves have been made so far, and will need to respond with their next move.  This will continue until one player wins at least 3 hands.  The schema for a Match is as follows:</p>
       <pre><code>{
   opponent: String /* UUID */,
-  history: [Hand],
+  history: JSON Array of Hand ([{hand}, {hand},...],
   started: Date,
   lastMove: Date /* Will be null when the match starts */
 }</code></pre>
@@ -46,6 +46,9 @@
     winner: String /* player1 or player2 */
   }
 }</code></pre>
+<p>Sample response from a Bot:</p>
+<pre><code>lizard
+</code></pre>
       <h6></h6>
     </div>
   </section>

@@ -3,7 +3,7 @@ import { inject } from 'aurelia-framework';
 import { Router } from 'aurelia-router';
 import Storage from './storage';
 import { EventAggregator } from 'aurelia-event-aggregator'
-import { LoggedIn, LoggedOut } from '../events/authentication';
+import { LoggedIn, LoggedOut, AuthenticationError } from '../events/authentication';
 
 function extractUser(token) {
   const rawData = token.split('.')[1];

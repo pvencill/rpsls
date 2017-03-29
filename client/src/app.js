@@ -20,6 +20,7 @@ export class App {
       { route: 'bots', name: 'bots', moduleId: './components/bots/list', nav: true, title: 'Bots', settings: { auth: true } },
       { route: 'login', name: 'login', moduleId: './login', nav: false, title: 'Login' },
       { route: 'rules', name: 'rules', moduleId: './components/rules/welcome', nav: true, title: 'Rules' },
+      { route: 'battles/:botId', name: 'battleBot', moduleId: './components/battle/bot', nav: false, title: 'Battle!' },
     ]);
 
     this.router = router;

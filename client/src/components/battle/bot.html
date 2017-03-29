@@ -1,0 +1,16 @@
+<template>
+  <div class="container container-fluid">
+    <h2 class="title row">Battle!</h2>
+    <i if.bind='!match' class="row fa fa-spinner fa-spin"></i>
+    <div class="row" if.bind="match">
+      <ul class="battle-log">
+        <li repeat.for="entry of battleLog">${entry.result.text}</li>
+      </ul>
+      <div if.bind="!battleLog.length">No moves have been made yet.</div>
+      <div>
+        <h4>Make your move:</h4>
+        <button repeat.for='choice of MOVES' class="btn btn-primary" click.delegate="move(choice.toLowerCase())">${choice}</button>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,8 +1,11 @@
 <template>
   <div class="container">
     <h3 class="row">Registered Bots</h3>
-    <ul if.bind='bots.length' class="row">
-      <li repeat.for='bot of bots'>${bot.name}</li>
+    <ul if.bind='bots.length' class="row list-unstyled">
+      <li repeat.for='bot of bots' class='top-buffer'>
+        <span>${bot.name}</span>
+        <a class='btn btn-danger btn-xs' title='Battle!' route-href="route: battleBot; params.bind: {botId: bot._id}"><i class="glyphicon glyphicon-knight"></i></a>
+      </li>
     </ul>
     <p class="row" if.bind='!bots.length'>No bots have been registered.</p>
   </div>

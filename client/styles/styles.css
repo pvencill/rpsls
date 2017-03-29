@@ -247,3 +247,11 @@ a:link {
   min-height: 125px;
   min-width: 100px;
 }
+
+.clickable {
+  cursor: pointer;
+}
+
+.top-buffer {
+  margin-top: 10px;
+}
