@@ -2,15 +2,27 @@
   <div class="container container-fluid">
     <h2 class="title row">Battle!</h2>
     <i if.bind='!match' class="row fa fa-spinner fa-spin"></i>
+    <table class="table table-sm table-striped" if.bind='match.history.length'>
+      <thead>
+        <th>Your Move</th>
+        <th>Opponent's Move</th>
+        <th>Result</th>
+      </thead>
+      <tbody>
+        <tr repeat.for='entry of match.history'>
+          <td>${entry.player1.move}</td>
+          <td>${entry.player2.move}</td>
+          <td>${entry.result.text}</td>
+        </tr>
+      </tbody>
+    </table>
     <div class="row" if.bind="match">
-      <ul class="battle-log">
-        <li repeat.for="entry of battleLog">${entry.result.text}</li>
-      </ul>
-      <div if.bind="!battleLog.length">No moves have been made yet.</div>
-      <div>
+      <div if.bind="!match.history.length">No moves have been made yet.</div>
+      <div if.bind='!scores.winner'>
         <h4>Make your move:</h4>
         <button repeat.for='choice of MOVES' class="btn btn-primary" click.delegate="move(choice.toLowerCase())">${choice}</button>
       </div>
+      <h4 class='col-md-4 ${scores.winner === "player1" ? "alert-success" : "alert-danger"}' if.bind="scores.winner">${scores.winner === "player1" ? "You Won!" : "You Lost!"}</h4>
     </div>
   </div>
 </template>
